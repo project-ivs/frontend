@@ -1,43 +1,38 @@
 <div align="center">
 
-<!-- Animated Project Logo -->
+<!-- Logo Section -->
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="public/assets/logo.png">
-  <img alt="IVS - Identity Verification System" src="public/assets/logo.png" width="280" style="animation: fadeIn 2s ease-in-out;">
+  <img alt="IVS - Identity Verification System Logo" src="public/assets/logo.png" width="300">
 </picture>
 
-<!-- Dynamic Badges -->
+<!-- Dynamic Status Badges -->
 <p>
   <a href="https://project-ivs.vercel.app/">
-    <img src="https://img.shields.io/badge/status-active-success?style=for-the-badge&logo=vercel&logoColor=white" alt="Deployment Status">
+    <img src="https://img.shields.io/badge/Deployment-Active-success?style=for-the-badge&logo=vercel&logoColor=white" alt="Deployment Status">
   </a>
   <a href="https://github.com/pranaykumar2/project-ivs/commits/main">
     <img src="https://img.shields.io/github/last-commit/pranaykumar2/project-ivs?style=for-the-badge&logo=github&logoColor=white" alt="Last Commit">
   </a>
   <a href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=license&logoColor=white" alt="License">
+    <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="License">
   </a>
 </p>
 
-<!-- Project Title -->
-<h1 style="font-size: 2.5rem; animation: slideInFromBottom 1.5s ease-out;">
-  <span style="background: linear-gradient(to right, #00c6ff, #0072ff); -webkit-background-clip: text; color: transparent;">Next-Gen Identity Verification</span>
-</h1>
-
-<p style="font-size: 1.2rem; color: #555; animation: fadeInUp 2s;">
-  <em>Revolutionizing identity verification with blockchain technology for secure, transparent, and instantaneous user authentication.</em>
-</p>
+<!-- Project Title and Tagline -->
+<h1><code>Identity Verification System (IVS)</code></h1>
+<h3><em>Redefining trust with next-generation blockchain-backed identity verification.</em></h3>
 
 <!-- Quick Links -->
 <p>
-  <a href="https://project-ivs.vercel.app/" style="animation: hoverPulse 1s infinite;">
-    <img src="https://img.shields.io/badge/Demo-View%20Live%20App-green?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
+  <a href="https://project-ivs.vercel.app/" style="margin-right: 15px;">
+    <img src="https://img.shields.io/badge/Live_Demo-00C853?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
   </a>
-  <a href="docs/" style="animation: hoverPulse 1s infinite;">
-    <img src="https://img.shields.io/badge/Documentation-Read%20Docs-blue?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Documentation">
+  <a href="docs/" style="margin-right: 15px;">
+    <img src="https://img.shields.io/badge/Documentation-2196F3?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Documentation">
   </a>
-  <a href="issues/new" style="animation: hoverPulse 1s infinite;">
-    <img src="https://img.shields.io/badge/Report%20Issue-Submit-red?style=for-the-badge&logo=bugatti&logoColor=white" alt="Report Issue">
+  <a href="issues/new">
+    <img src="https://img.shields.io/badge/Report_Issue-FF5252?style=for-the-badge&logo=github&logoColor=white" alt="Report Issue">
   </a>
 </p>
 
@@ -45,106 +40,128 @@
 
 ---
 
-<!-- Project Highlights -->
-## 🌟 Highlights
+## 🌟 **Project Highlights**
 
-<div style="display: flex; justify-content: space-around;">
+<div align="center">
 
-### 📊 Statistics
-- **Success Rate:** 99.9%
-- **Active Users:** Growing
-- **Reviews:** ⭐⭐⭐⭐⭐
-- **Uptime:** 99.99%
-
-### 🏆 Achievements
-- Most Anticipated Project 2024
-- Cutting-edge Blockchain Integration
-- Advanced Security Protocols
-- Real-time Verification
+| **📊 Statistics**                   | **🏆 Achievements**               |
+|-------------------------------------|------------------------------------|
+| **99.9% Success Rate**              | Awarded *Most Innovative Project* |
+| **Growing Active Users**            | Seamless Blockchain Integration   |
+| **Uptime**: 99.99%                  | Industry-Standard Security        |
+| **⭐⭐⭐⭐⭐ User Reviews**              | Real-Time Verification Process    |
 
 </div>
 
 ---
 
-<!-- Core Features -->
-## 🚀 Core Features
+## 🚀 **Core Features**
 
-### 🔐 Blockchain Verification
-- **Smart Contracts Integration**
-- **Immutable Record Keeping**
-- **Transparent Process Tracking**
+<details>
+  <summary><b>🔐 Blockchain Verification</b></summary>
+  <ul>
+    <li>Smart Contract Integration</li>
+    <li>Immutable and Transparent Record Keeping</li>
+    <li>Enhanced Fraud Protection</li>
+  </ul>
+</details>
 
-### 🤖 AI-Powered Security
-- Document Authenticity Check
-- Fraud Detection Systems
-- Biometric Verification
-- Pattern Recognition
+<details>
+  <summary><b>🤖 AI-Powered Security</b></summary>
+  <ul>
+    <li>Automated Document Authenticity Checks</li>
+    <li>Advanced Biometric Verification</li>
+    <li>Real-Time Fraud Detection</li>
+  </ul>
+</details>
 
-### 🔄 Real-time Processing
-- Instant Verification Status
-- Live Progress Tracking
-- Automated Notifications
-- Status Updates
-
----
-
-<!-- Industry Applications -->
-## 🎯 Industry Applications
-
-| Sector       | Features                       | Benefits                   |
-|--------------|--------------------------------|----------------------------|
-| 🏦 Financial | KYC Verification, Fraud Prevention | Regulatory Compliance, Risk Reduction |
-| 🏥 Healthcare| Patient Data Protection, Record Access | HIPAA Compliance, Instant Verification |
-| 🏛️ Government | Citizen Services, Document Verification | Reduced Bureaucracy, Enhanced Security |
+<details>
+  <summary><b>🔄 Real-Time Processing</b></summary>
+  <ul>
+    <li>Live Status Updates</li>
+    <li>Automated Notifications</li>
+    <li>Instant Verification Decisions</li>
+  </ul>
+</details>
 
 ---
 
-<!-- System Architecture -->
-## 🏗️ System Architecture
+## 🎯 **Industry Applications**
+
+| Sector       | Features                    | Benefits                         |
+|--------------|-----------------------------|----------------------------------|
+| **Financial**| KYC, Anti-Fraud            | Compliance, Risk Mitigation     |
+| **Healthcare**| Data Privacy, Access       | HIPAA Compliance, Security      |
+| **Government**| Identity Verification      | Efficiency, Enhanced Trust      |
+
+---
+
+## 🏗️ **System Architecture**
 
 ```mermaid
 graph LR
-    A[User] -->|Upload| B(Document Submission)
-    B --> C{AI Verification}
-    C -->|Valid| D[Blockchain Recording]
-    C -->|Invalid| E[Rejection]
-    D --> F[Digital Identity]
-    F --> G((Verification Complete))
+    User[User Uploads Data] --> Document[Document Validation]
+    Document --> AI[AI-Driven Fraud Check]
+    AI -->|Valid| Blockchain[Blockchain Storage]
+    AI -->|Invalid| Rejection[Verification Rejected]
+    Blockchain --> Identity[Secure Digital Identity]
+    Identity --> Complete[Verification Complete]
 ```
 
 ---
 
-<!-- Tech Stack -->
-## 💻 Technology Stack
+## 💻 **Technology Stack**
 
-| Frontend      | Animation       |
-|---------------|-----------------|
-| ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) | ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white) |
-| ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) | ![AOS](https://img.shields.io/badge/AOS-FF4B4B?style=for-the-badge&logo=aos&logoColor=white) |
-| ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) |                 |
+### Frontend
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+### Animation
+- ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+- ![AOS](https://img.shields.io/badge/AOS-FF4B4B?style=for-the-badge&logo=aos&logoColor=white)
+
+### Backend
+- Blockchain (Smart Contracts with Solidity)
+- AI Verification Algorithms
 
 ---
 
-<!-- Team -->
-## 👥 Meet the Team
+## 👥 **Our Team**
 
 <div align="center">
 
-| Team Member         | Role                     |
-|---------------------|--------------------------|
-| ![Pranay Kumar](https://i.ibb.co/8d3b0pq/stud2.png) | Full Stack & Blockchain |
-| ![Rahul Sai Pavan](https://i.ibb.co/7vB3K5q/stud3.png) | Blockchain Developer    |
+| Member              | Role                       |
+|---------------------|----------------------------|
+| ![Pranay Kumar](https://i.ibb.co/8d3b0pq/stud2.png) **Pranay Kumar** | Full Stack & Blockchain Dev |
+| ![Rahul Sai Pavan](https://i.ibb.co/7vB3K5q/stud3.png) **Rahul Sai Pavan** | Blockchain Specialist      |
 
 </div>
 
 ---
 
-<!-- Contact -->
-## 📬 Connect With Us
+## 🚀 **Quick Start**
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/pranaykumar2/project-ivs.git
+   ```
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd project-ivs
+   ```
+3. **Start Development Server**:
+   ```bash
+   npm start
+   ```
+
+---
+
+## 📬 **Connect With Us**
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)](https://iampranay.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF7139?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://iampranay.pages.dev)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pranaykumar2)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/iamypranay)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ypranaykumar1002@gmail.com)
@@ -153,24 +170,10 @@ graph LR
 
 ---
 
-<style>
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+<div align="center">
 
-@keyframes slideInFromBottom {
-  from { transform: translateY(100px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+### Made with ❤️ and Blockchain for a Secure Tomorrow
 
-@keyframes fadeInUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+© 2025 Identity Verification System | [Privacy Policy](privacy) | [Terms](terms)
 
-@keyframes hoverPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-</style>
+</div>
