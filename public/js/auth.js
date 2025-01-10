@@ -4,6 +4,65 @@ class AuthController {
         this.bindEvents();
         this.setupBackgroundEffects();
         this.initializeWeb3();
+
+        // Initialize elements with null checks
+        this.forgotPasswordLink = document.getElementById('forgotPasswordLink');
+        this.forgotPasswordModal = document.getElementById('forgotPasswordModal');
+        this.forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        this.closeForgotPasswordModal = document.getElementById('closeForgotPasswordModal');
+        
+        this.registerForm = document.getElementById('registerForm');
+        this.loginForm = document.getElementById('loginForm');
+
+        // Bind additional events
+        this.bindForgotPasswordEvents();
+
+        // Bind form submit handlers
+        if (this.registerForm) {
+            this.registerForm.addEventListener('submit', (e) => this.handleSubmit(e, 'register'));
+        }
+        if (this.loginForm) {
+            this.loginForm.addEventListener('submit', (e) => this.handleSubmit(e, 'login'));
+        }
+
+        // Bind forgot password events only if elements exist
+        if (this.forgotPasswordLink && this.forgotPasswordModal) {
+            this.bindForgotPasswordEvents();
+        }
+
+        // Check for verification token in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const verificationToken = urlParams.get('token');
+        const isResetPassword = window.location.pathname === '/reset-password';
+
+        if (verificationToken && !isResetPassword) {
+            this.verifyEmail(verificationToken);
+        } else if (isResetPassword && verificationToken) {
+            // Handle password reset page
+            this.initializeResetPassword(verificationToken);
+        }
+    }
+
+    bindForgotPasswordEvents() {
+        this.forgotPasswordLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.forgotPasswordModal.classList.add('active');
+        });
+
+        if (this.closeForgotPasswordModal) {
+            this.closeForgotPasswordModal.addEventListener('click', () => {
+                this.forgotPasswordModal.classList.remove('active');
+            });
+        }
+
+        if (this.forgotPasswordForm) {
+            this.forgotPasswordForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = e.target.email.value;
+                await this.handleForgotPassword(email);
+                this.forgotPasswordModal.classList.remove('active');
+            });
+        }
     }
 
     // Clear Forms Method
@@ -481,44 +540,121 @@ class AuthController {
         const form = e.target;
         const submitBtn = form.querySelector('.submit-btn');
 
-        // Validate all inputs
-        let isValid = true;
-        form.querySelectorAll('.input-field').forEach(input => {
-            if (!this.validateInput({ target: input })) {
-                isValid = false;
-            }
-        });
-
-        if (!isValid) return;
-
-        // Show loading state
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
-
         try {
-            // Handle form data
+            // Get form data
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
-            // If wallet is connected, add wallet address
-            if (this.isConnected && this.userAccount) {
-                data.walletAddress = this.userAccount;
+            // Add validation for required fields
+            if (!data.email || !data.password) {
+                this.showToast('Please fill in all required fields', 'error');
+                return;
             }
 
-            // Simulate API call
-            await this.simulateApiCall(formType, data);
+            // Show loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('loading');
+            }
+
+            // API endpoints
+            const response = await fetch(`/api/auth/${formType}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || 'Operation failed');
+            }
 
             if (formType === 'register') {
-                this.showSuccessModal();
+                this.showToast('Registration successful! Please check your email for verification.', 'success');
+                // Optional: Switch to login form
+                this.switchForm('login');
             } else {
-                // Redirect to dashboard for login
+                // Store token and user data
+                localStorage.setItem('token', result.token);
+                localStorage.setItem('user', JSON.stringify(result.user));
+                this.showToast('Login successful!', 'success');
+                // Redirect to dashboard
                 window.location.href = '/dashboard';
             }
         } catch (error) {
-            this.showToast(error.message, 'error');
+            this.showToast(error.message || 'An error occurred', 'error');
         } finally {
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+            }
+        }
+    }
+
+    // Add this method to the AuthController class in auth.js
+
+    async verifyEmail(token) {
+        try {
+            const response = await fetch(`/api/auth/verify-email?token=${token}`);
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || 'Verification failed');
+            }
+
+            this.showToast('Email verified successfully. You can now login.', 'success');
+            this.switchForm('login');
+        } catch (error) {
+            this.showToast(error.message, 'error');
+        }
+    }
+
+// Add password reset methods
+    async handleForgotPassword(email) {
+        try {
+            const response = await fetch('/api/auth/forgot-password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || 'Operation failed');
+            }
+
+            this.showToast('Password reset instructions sent to your email', 'success');
+        } catch (error) {
+            this.showToast(error.message, 'error');
+        }
+    }
+
+    async handleResetPassword(token, password) {
+        try {
+            const response = await fetch('/api/auth/reset-password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token, password })
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || 'Operation failed');
+            }
+
+            this.showToast('Password reset successful. You can now login.', 'success');
+            this.switchForm('login');
+        } catch (error) {
+            this.showToast(error.message, 'error');
         }
     }
 
